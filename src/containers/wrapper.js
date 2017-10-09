@@ -12,14 +12,14 @@ function wrapper (view) {
       ? container(intro(state, emit))
       : state.app.loaded
       ? container(view(state, emit))
-      : ''
+      : container('')
 
     function container (content) {
       return html`
-        <main>
+        <body>
           ${css(state, emit)}
           ${content}
-        </main>
+        </body>
       `
     }
   }

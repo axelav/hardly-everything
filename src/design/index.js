@@ -3,7 +3,7 @@ var gr8 = require('gr8')
 var recsst = require('recsst')
 var lilcss = require('lilcss')
 
-var custom = fs.readFileSync(__dirname + '/index.css', 'utf8')
+// var custom = fs.readFileSync(__dirname + '/index.css', 'utf8')
 
 var utils = [ ]
 var gr8css = gr8({
@@ -84,7 +84,7 @@ var lilopts = {
 var lilgr8 = lilcss(gr8css.toString(), lilsrc, lilopts)
 
 var built = [
-  custom,
+  // custom,
   recsst.toString(),
   lilgr8,
 ].join(' ')

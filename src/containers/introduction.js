@@ -41,7 +41,7 @@ class Countdown extends Component {
     return false
   }
 
-  render () {
+  createElement () {
     return html`
       <div class="mono">
         0:${('0' + this.state.count).slice(-2)}
