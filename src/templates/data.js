@@ -1,4 +1,4 @@
-var html = require('rooch/html')
+var html = require('choo/html')
 var x = require('xtend')
 var ov = require('object-values')
 
@@ -17,7 +17,7 @@ var navigationOpts = {
 
 var getCommand = command => command || 'export'
 
-var handleImportClick = (event, emit) => {
+function handleImportClick (event, emit) {
   var input = event.target.parentNode.querySelector('textarea')
   var value = input.value
 
@@ -30,7 +30,7 @@ var handleImportClick = (event, emit) => {
   }
 }
 
-var elNavigation = (state, emit) => {
+function elNavigation (state, emit) {
   var command = getCommand(state.params.command)
   var opts = ov(navigationOpts)
 
@@ -61,7 +61,7 @@ var elNavigation = (state, emit) => {
   </div>`
 }
 
-var elImport = (state,emit) => {
+function elImport (state, emit) {
   return html`<div class="data">
     <textarea
       class="mono bg-white tc-black p1 fs1 lh1-5"
@@ -76,7 +76,7 @@ var elImport = (state,emit) => {
   </div>`
 }
 
-var elExport = (state, emit) => {
+function elExport (state, emit) {
   var entries = state.entries.all
 
   return html`<div class="data">
@@ -87,7 +87,7 @@ var elExport = (state, emit) => {
   </div>`
 }
 
-var view = (state, emit) => {
+function view (state, emit) {
   var command = getCommand(state.params.command)
 
   var elContent = command === 'import'

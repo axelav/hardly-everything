@@ -1,6 +1,5 @@
-var Component = require('rooch/component')
-var h = require('rooch/h')
-var html = require('rooch/html')
+var Component = require('nanocomponent')
+var html = require('choo/html')
 var x = require('xtend')
 var objectValues = require('object-values')
 

@@ -1,8 +1,8 @@
-var html = require('rooch/html')
-var rooch = require('rooch')
+var html = require('choo/html')
+var rooch = require('choo')
 
 var wrapper = require('./containers/wrapper')
-var app = rooch()
+var app = choo()
 
 // plugins
 require('./plugins').forEach(plugin => app.use(plugin))

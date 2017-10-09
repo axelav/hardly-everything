@@ -1,6 +1,4 @@
-var react = require('react')
-var h = require('rooch/h')
-var html = require('rooch/html')
+var html = require('choo/html')
 var x = require('xtend')
 
 var inputColor = require('../components/input-color')

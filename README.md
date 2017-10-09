@@ -1,6 +1,6 @@
-# hardly everything
+# <center>hardly everything</center>
 
-your feed with a cadence
+Your feed with a cadence
 
 ## todo
 

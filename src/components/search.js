@@ -1,8 +1,8 @@
-var html = require('rooch/html')
+var html = require('choo/html')
 
 module.exports = Search
 
-function Search (props = { }) {
+function Search (props) {
   return html`
     <div>search</div>
   `

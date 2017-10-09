@@ -1,5 +1,5 @@
-var html = require('rooch/html')
-var Component = require('rooch/component')
+var html = require('choo/html')
+var Component = require('nanocomponent')
 
 module.exports = class Text extends Component {
   constructor () {

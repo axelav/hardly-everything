@@ -1,7 +1,6 @@
-var html = require('rooch/html')
-var h = require('rooch/h')
+var html = require('choo/html')
 var TokenInput = require('preact-token-input')
-var Component = require('rooch/component')
+var Component = require('nanocomponent')
 
 module.exports = class Tags extends Component {
   constructor () {

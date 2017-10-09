@@ -1,6 +1,5 @@
-var html = require('rooch/html')
-var h = require('rooch/h')
-var Component = require('rooch/component')
+var html = require('choo/html')
+var Component = require('nanocomponent')
 var ov = require('object-values')
 
 module.exports = intro
@@ -13,13 +12,13 @@ class Countdown extends Component {
     }
   }
 
-  componentDidMount () {
+  load () {
     this.frame = setInterval(() => {
       this.tick()
     }, 1000)
   }
 
-  componentWillUnmount() {
+  unload() {
     clearInterval(this.frame) 
   }
 
@@ -38,6 +37,10 @@ class Countdown extends Component {
     }
   }
 
+  update () {
+    return false
+  }
+
   render () {
     return html`
       <div class="mono">
@@ -46,6 +49,8 @@ class Countdown extends Component {
     `
   }
 }
+
+var countdown = new Countdown()
 
 function intro (state, emit) {
   return html`
@@ -100,7 +105,7 @@ function intro (state, emit) {
   `
 
   function elProceed () {
-    return h(Countdown, {
+    return countdown({
       finished: () => {
         emit('intro:update', { status: false })
       }

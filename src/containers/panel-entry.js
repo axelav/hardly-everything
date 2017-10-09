@@ -1,5 +1,4 @@
-var html = require('rooch/html')
-var h = require('rooch/h')
+var html = require('choo/html')
 var x = require('xtend')
 
 var { intToRest } = require('../helpers/time')

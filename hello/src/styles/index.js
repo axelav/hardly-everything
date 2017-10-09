@@ -1,5 +1,6 @@
-const sf = require('sheetify')
-const gr8 = require('gr8')
+var sf = require('sheetify')
+var gr8 = require('gr8')
+
 require('./typography')
 
 var options = {

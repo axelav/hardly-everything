@@ -1,4 +1,4 @@
-var html = require('rooch/html')
+var html = require('choo/html')
 var css = require('../components/css')
 
 var intro = require('../containers/introduction')
