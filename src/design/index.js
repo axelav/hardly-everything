@@ -5,6 +5,7 @@ var lilcss = require('lilcss')
 
 var custom = fs.readFileSync(__dirname + '/index.css', 'utf8')
 
+var utils = [ ]
 var gr8css = gr8({
   breakpoints: {
     lg: '1000px',
@@ -22,46 +23,46 @@ var gr8css = gr8({
   responsive: true
 })
 
-gr8css.add({
+utils.push({
   prop: 'position',
   prefix: 'ps',
   vals: { st: 'sticky' }
 })
 
-gr8css.add({
+utils.push({
   prop: 'width',
   unit: '%',
   vals: [50]
 })
 
-gr8css.add({
+utils.push({
   prop: 'width',
   prefix: 'wrem',
   unit: 'rem',
   vals: [40]
 })
 
-gr8css.add({
+utils.push({
   prop: 'max-width',
   prefix: 'mwrem',
   unit: 'rem',
   vals: [43]
 })
 
-gr8css.add({
+utils.push({
   prop: 'opacity',
   prefix: 'op',
   vals: [{ 33: 0.3 }]
 })
 
-gr8css.add({
+utils.push({
   prop: 'padding-top',
   prefix: 'ptvh',
   unit: 'vh',
   vals: [25, 50, 75, 100]
 })
 
-gr8css.add({
+utils.push({
   prop: 'margin-top',
   prefix: 'mtpx',
   unit: 'rem',

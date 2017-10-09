@@ -1,5 +1,5 @@
 var html = require('choo/html')
-var rooch = require('choo')
+var choo = require('choo')
 
 var wrapper = require('./containers/wrapper')
 var app = choo()

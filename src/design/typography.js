@@ -1,12 +1,17 @@
 var webfontloader = require('webfontloader')
 
-exports.local = (cb) => {
+module.exports = {
+  local: local,
+  load: load
+}
+
+function local (cb) {
   if (cb && typeof cb === 'function') {
     cb()
   }
 }
 
-exports.load = (data, emit) => {
+function load (data, emit) {
   switch (data.host) {
     case 'google':
       var value = data.weight

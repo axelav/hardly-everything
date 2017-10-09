@@ -4,11 +4,14 @@ var x = require('xtend')
 var { intToRest } = require('../helpers/time')
 var InputRange = require('../components/input/range')
 var InputText = require('../components/input/text')
-var InputTags = require('../components/input/tags')
+// var InputTags = require('../components/input/tags')
 
 module.exports = view
 
 function view (state, emit) {
+  return html`
+    <div>soon</div>
+  `
   return html`
     <form
       autocomplete="off"
@@ -79,20 +82,6 @@ function view (state, emit) {
           />
         </div>
       </div>
-      <div class="c12 p1px ${isTagsVisible() && isStepThree() ? 'db' : 'dn'}">
-        <div class="bg-white oxs">
-          ${h(InputTags, {
-            key: 'tags',
-            name: 'Tags',
-            value: state.staging.entry.tags || [ ],
-            onChange: function (data) {
-              emit('staging:entry', {
-                tags: data.value
-              })
-            }
-          })}
-        </div>
-      </div>
       <div class="c12 x">
         <div class="${state.staging.entry.id ? 'x c4' : 'dn'} p1px">
           <input
@@ -115,6 +104,25 @@ function view (state, emit) {
       </div>
     </form>
   `
+
+  function tags () {
+    return html` 
+      <div class="c12 p1px ${isTagsVisible() && isStepThree() ? 'db' : 'dn'}">
+        <div class="bg-white oxs">
+          ${h(InputTags, {
+            key: 'tags',
+            name: 'Tags',
+            value: state.staging.entry.tags || [ ],
+            onChange: function (data) {
+              emit('staging:entry', {
+                tags: data.value
+              })
+            }
+          })}
+        </div>
+      </div>
+    `
+  }
 
   function getTime (value) {
     return intToRest({

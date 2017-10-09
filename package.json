@@ -5,10 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "build": "npm run build-css && npm run build-js",
-    "bust-cache": "break-cache -i ./dist/index.html -m 'bundle.js|bundle.css' -o ./dist/index.html",
     "build-css": "node ./src/design | postcss --use autoprefixer --use postcss-clean > dist/bundles/bundle.css",
     "watch-css": "watch 'node ./src/design > dist/bundles/bundle.css' ./src",
-    "build-js": "browserify src/index.js -t envify -t brfs -t [ babelify --presets [ babel-preset-es2015 babel-preset-react ] ] -g uglifyify > dist/bundles/bundle.js",
+    "build-js": "browserify src/index.js -t envify -t brfs -g uglifyify > dist/bundles/bundle.js",
     "watch-js": "budo src/index.js:bundles/bundle.js --dir dist --pushstate -- -t [ envify --NODE_ENV development ] -t brfs",
     "start": "concurrently --kill-others \"npm run watch-js\" \"npm run watch-css\"",
     "deploy": "dat sync dist/"
@@ -16,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "asset-cache-bust": "^2.2.0",
     "brfs": "^1.4.3",
     "browserify": "^13.1.0",
     "concurrently": "^3.4.0",

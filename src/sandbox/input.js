@@ -3,7 +3,7 @@ module.exports = [
   checkbox,
   range,
   text,
-  tags
+  // tags
 ]
 
 function checkbox (state, emit) {
@@ -107,36 +107,36 @@ function text (state, emit) {
   }
 }
 
-function tags (state, emit) {
-  return {
-    key: 'tags',
-    name: 'Tags',
-    template: require('../components/input/tags'),
-    variations: [{
-      name: 'Default',
-      props: {
-        key: 'one',
-        name: 'Test',
-        value: [ ],
-        onChange: function(data) {
-          emit({
-            component: 'Tags',
-            data: data
-          })
-        }
-      }
-    }, {
-      name: 'Tags',
-      props: {
-        key: 'two',
-        value: ['one', 'two', 'three'],
-        onChange: function(data) {
-          emit({
-            component: 'Tags',
-            data: data
-          })
-        }
-      }
-    }]
-  }
-}
+// function tags (state, emit) {
+//   return {
+//     key: 'tags',
+//     name: 'Tags',
+//     template: require('../components/input/tags'),
+//     variations: [{
+//       name: 'Default',
+//       props: {
+//         key: 'one',
+//         name: 'Test',
+//         value: [ ],
+//         onChange: function(data) {
+//           emit({
+//             component: 'Tags',
+//             data: data
+//           })
+//         }
+//       }
+//     }, {
+//       name: 'Tags',
+//       props: {
+//         key: 'two',
+//         value: ['one', 'two', 'three'],
+//         onChange: function(data) {
+//           emit({
+//             component: 'Tags',
+//             data: data
+//           })
+//         }
+//       }
+//     }]
+//   }
+// }

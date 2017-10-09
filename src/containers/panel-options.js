@@ -1,7 +1,7 @@
 var html = require('choo/html')
 var x = require('xtend')
 
-var inputColor = require('../components/input-color')
+// var inputColor = require('../components/input-color')
 var inputText = require('../components/input/text')
 var inputCheckbox = require('../components/input/checkbox')
 var inputRange = require('../components/input/range')
@@ -10,6 +10,9 @@ var inputTypography = require('../components/input-typography')
 module.exports = view
 
 function view (state, emit) {
+  return html`
+    <div>soon</div>
+  `
   return html`
     <div class="${state.ui.mobile ? '' : 'panel-content'} x xw c12 bg-black tc-white sans usn">
       <div class="c12 p1px">
@@ -90,16 +93,16 @@ function view (state, emit) {
         })
       case 'color':
         var color = state.options.values[option.key]
-        return h(inputColor, {
-          data: option,
-          color: `rgb(${color.r}, ${color.g}, ${color.b})`,
-          handleChange: function (value) {
-            emit('options:values', {
-              key: option.key,
-              value: value.rgb
-            })
-          }
-        })
+        // return h(inputColor, {
+        //   data: option,
+        //   color: `rgb(${color.r}, ${color.g}, ${color.b})`,
+        //   handleChange: function (value) {
+        //     emit('options:values', {
+        //       key: option.key,
+        //       value: value.rgb
+        //     })
+        //   }
+        // })
       case 'range':
         return h(inputRange, {
           name: option.name,

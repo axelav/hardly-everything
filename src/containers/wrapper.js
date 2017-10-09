@@ -16,10 +16,10 @@ function wrapper (view) {
 
     function container (content) {
       return html`
-        <div>
+        <main>
           ${css(state, emit)}
           ${content}
-        </div>
+        </main>
       `
     }
   }
