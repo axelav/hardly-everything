@@ -66,7 +66,7 @@ function intro (state, emit) {
           <div class="p1 copy">
             <p class="mb3 op33"><span class="fwb">Currently Beta</span>: There are no invites, accounts, or mailing lists to subscribe to. Instead, you must wait on this page a full minute before continuing. Below is some reading material, as the time passes…</p>
 
-            <p>The prominent apps and sites often share a common element today; <em>the feed</em>. It looks like Facebook’s timeline, or Buzzfeed’s homepage—an endlessly updating stream of content, designed to keep you returning, and spending more time.</p>
+            <p>Popular apps and sites often share a common element today; <em>the feed</em>. It looks like Facebook’s timeline, or Buzzfeed’s homepage—an endlessly updating stream of content, designed to keep you returning, and spending more time.</p>
 
             <p>You frequently hear of us feeling burnt out by this “<em>drinking from a firehose</em>.” Of course, these products know that, and are increasingly implementing steps to filter what you see and what you don’t based in part on what keeps you returning—a perpetually shifting mix, resulting in what has become known as <em>the filter bubble</em>, <em>FOMO</em>, and other things.</p>
 
