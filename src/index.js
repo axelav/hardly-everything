@@ -1,8 +1,10 @@
-var html = require('choo/html')
 var choo = require('choo')
+var css = require('sheetify')
 
 var wrapper = require('./containers/wrapper')
 var app = choo()
+
+require('./design')
 
 // plugins
 require('./plugins').forEach(plugin => app.use(plugin))
@@ -27,4 +29,5 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // start
-app.mount('main')
+if (module.parent) module.exports = app
+else app.mount('body')

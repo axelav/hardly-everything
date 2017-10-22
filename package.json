@@ -30,7 +30,7 @@
     "assert": "^1.4.1",
     "axios": "^0.14.0",
     "budo": "^9.0.0",
-    "choo": "^6.4.1",
+    "choo": "^6.5.1",
     "clone-deep": "^0.2.4",
     "coloreact": "^0.1.10",
     "fastclick": "^1.0.6",

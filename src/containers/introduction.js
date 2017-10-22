@@ -7,15 +7,19 @@ module.exports = intro
 class Countdown extends Component {
   constructor () {
     super()
+
     this.state = {
-      count: 60
+      count: 3
     }
+
+    this.finished = function () { }
+
+    this.tick = this.tick.bind(this)
+    this.handleFinished = this.handleFinished.bind(this)
   }
 
   load () {
-    this.frame = setInterval(() => {
-      this.tick()
-    }, 1000)
+    this.frame = setInterval(this.tick, 1000)
   }
 
   unload() {
@@ -23,15 +27,14 @@ class Countdown extends Component {
   }
 
   handleFinished () {
-    if (this.props.finished && typeof this.props.finished === 'function') {
-      clearInterval(this.frame)
-      this.props.finished()
-    }
+    clearInterval(this.frame)
+    this.finished()
   }
 
   tick () {
     if (this.state.count > 0) {
-      this.setState({ count: this.state.count - 1 }) 
+      this.state.count = this.state.count - 1
+      this.rerender()
     } else {
       this.handleFinished()
     }
@@ -41,7 +44,9 @@ class Countdown extends Component {
     return false
   }
 
-  createElement () {
+  createElement (props) {
+    if (props.finished) this.finished = props.finished
+
     return html`
       <div class="mono">
         0:${('0' + this.state.count).slice(-2)}
@@ -105,7 +110,7 @@ function intro (state, emit) {
   `
 
   function elProceed () {
-    return countdown({
+    return countdown.render({
       finished: () => {
         emit('intro:update', { status: false })
       }
