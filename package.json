@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build-css && npm run build-js",
-    "build-css": "node ./src/design | postcss --use autoprefixer --use postcss-clean > dist/bundles/bundle.css",
-    "watch-css": "watch 'node ./src/design > dist/bundles/bundle.css' ./src",
     "build-js": "browserify src/index.js -t envify -t brfs -g uglifyify > dist/bundles/bundle.js",
-    "watch-js": "budo src/index.js:bundles/bundle.js --dir dist --pushstate -- -t [ envify --NODE_ENV development ] -t brfs",
-    "start": "concurrently --kill-others \"npm run watch-js\" \"npm run watch-css\"",
+    "start": "budo src/index.js:bundles/bundle.js --dir dist --pushstate -- -t [ envify --NODE_ENV development ] -t sheetify -t brfs",
     "deploy": "dat sync dist/"
   },
   "author": "",
@@ -45,6 +42,7 @@
     "react-color": "^2.11.7",
     "recsst": "^1.1.2",
     "rooch": "^2.2.0",
+    "sheetify": "^6.2.0",
     "tinycolor2": "^1.4.1",
     "uuid": "^3.0.1",
     "valid-url": "^1.0.9",

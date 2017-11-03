@@ -1,8 +1,7 @@
 var gr8 = require('gr8')
 
-// var custom = fs.readFileSync(__dirname + '/index.css', 'utf8')
-
 var utils = [ ]
+
 utils.push({
   prop: 'position',
   prefix: 'ps',
